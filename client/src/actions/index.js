@@ -7,6 +7,14 @@ export const fetchUser = () => async (dispatch) => {
 };
 
 
-export const submitSurvey = (values) =>{
-        return {type : 'submit survey'}
+export const submitSurvey = (values,history) => async(dispatch) =>{
+        // console.log(values);
+        const res =await fetch('/api/surveys', {
+                method : 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                  },
+                body : JSON.stringify(values)});
+        history.push('/surveys');        
+        dispatch({type : FETCH_USER, payload : res.data})
 }

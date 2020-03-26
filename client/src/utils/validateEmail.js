@@ -8,12 +8,12 @@ export default (emails) =>{
     var flag = false;
 
     invalidEmails.map(email => {
-        if(email != '')
+        if(email !== '')
             flag = true; 
     })
 
     if(flag && invalidEmails)
         return `These emails are invalid : ${invalidEmails}`;
     
-    return;
+    return null;
 }

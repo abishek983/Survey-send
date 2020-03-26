@@ -1,6 +1,6 @@
 //shows both surveyform and surveyfome review
 import React, { Component } from 'react';
-import { reduxFrom, reduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import SurveyForm from './SurveyForm';
 import SurveyFormReview from './SurveyFormReview';
 
@@ -29,5 +29,5 @@ class Surveynew extends Component {
 }
 
 export default reduxForm({
-    from : 'surveyForm'
+    form : 'surveyForm'
 })(Surveynew)
